@@ -19,7 +19,7 @@ const globalScope = typeof window !== 'undefined' ? window : (typeof globalThis 
 globalScope.CONFIG = {
   // Google Sheets Apps Script Web App URL
   // Paste your Web App URL here (e.g. 'https://script.google.com/macros/s/AKfycbx.../exec')
-  GOOGLE_SHEETS_URL: '',
+  GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbwFkgaJ2lwc7hIfwisxXNGk_hCxCZDN_YuxSL_TpoMOEvv6nFosu3W-y6k06Neof6A/exec',
 
   // Razorpay Key ID (from Razorpay Dashboard > Settings > API Keys)
   RAZORPAY_KEY_ID: 'rzp_live_Tkdzmr3lmmsdWc',
