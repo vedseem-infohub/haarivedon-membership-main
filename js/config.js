@@ -14,7 +14,9 @@
  * - Enter your Razorpay Key ID (starts with rzp_live_ or rzp_test_) in RAZORPAY_KEY_ID below.
  */
 
-window.CONFIG = {
+const globalScope = typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : {});
+
+globalScope.CONFIG = {
   // Google Sheets Apps Script Web App URL
   // Paste your Web App URL here (e.g. 'https://script.google.com/macros/s/AKfycbx.../exec')
   GOOGLE_SHEETS_URL: '',

@@ -45,7 +45,7 @@ Your Google Sheet acts as your live database and dashboard. It automatically tra
    - **Who has access**: `Anyone` *(⚠️ Important: must be set to "Anyone" so the website can send data without login).*
 9. Click **Deploy**, then click **Authorize access**, choose your Google account, and grant permissions.
 10. Copy the generated **Web app URL** (looks like `https://script.google.com/macros/s/AKfycb.../exec`).
-11. Open [`config.js`](./config.js) in this project and paste your URL into `GOOGLE_SHEETS_URL`:
+11. Open [`js/config.js`](./js/config.js) in this project and paste your URL into `GOOGLE_SHEETS_URL`:
    ```javascript
    GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec',
    ```
@@ -56,7 +56,7 @@ Done! As soon as a user clicks "Join Now" or "Get Course Details", the row is in
 
 ## 💳 Payment Gateway Setup (Razorpay)
 
-All payment settings live in [`config.js`](./config.js):
+All payment settings live in [`js/config.js`](./js/config.js):
 
 ```javascript
 window.CONFIG = {

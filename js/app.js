@@ -1,7 +1,14 @@
 (function () {
   'use strict';
 
-  var CONFIG = window.CONFIG || {
+  // Guard against non-browser environments (e.g. Node.js / Vercel Serverless Function evaluation)
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
+  var root = typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : {});
+
+  var CONFIG = root.CONFIG || {
     GOOGLE_SHEETS_URL: '',
     RAZORPAY_KEY_ID: 'rzp_live_Tkdzmr3lmmsdWc',
     SITE_NAME: 'HaarivedOn',
