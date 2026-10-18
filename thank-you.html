@@ -6,14 +6,17 @@
   <meta name="theme-color" content="#0b3d2e">
   <title>Thank You – HaarivedOn</title>
   <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     body{padding:0;min-height:100vh;min-height:100dvh;display:grid;place-items:center;background:linear-gradient(160deg,var(--green-900),var(--green-700));padding:20px}
     .ty{background:#fff;border-radius:22px;max-width:480px;width:100%;padding:36px 26px;text-align:center;border-top:6px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.35)}
-    .ty img{margin:0 auto 14px}
-    .ty h1{font-size:26px;margin:8px 0}
-    .ty p{color:var(--muted);margin-bottom:22px}
+    .ty img{margin:0 auto 14px;display:block}
+    .ty h1{font-size:26px;margin:12px 0 8px;font-family:Cinzel,serif;color:var(--green-900)}
+    .ty p{color:var(--muted);margin-bottom:18px;line-height:1.6}
+    .pay-id{display:inline-block;margin:6px 0 16px;font-size:13px;padding:6px 12px;background:#eef6f2;border-radius:6px;color:#0b3d2e;font-family:monospace;border:1px solid #c7e3d2}
   </style>
 </head>
 <body>
@@ -22,12 +25,18 @@
     <div class="modal-icon" id="icon">✓</div>
     <h1 id="title">Payment Successful!</h1>
     <p id="text">Our team will contact you on your registered mobile number within 24 hours.</p>
-    <a href="/" class="btn btn-gold btn-block">Back to Home</a>
+    <div id="payment-id-wrap" hidden><span class="pay-id">Payment ID: <b id="payment-id"></b></span></div>
+    <a href="index.html" class="btn btn-gold btn-block">Back to Home</a>
   </div>
   <script>
     (function () {
       var q = new URLSearchParams(location.search);
       var product = q.get('product') === 'course' ? 'course' : 'membership';
+      var paymentId = q.get('payment_id');
+      if (paymentId) {
+        document.getElementById('payment-id-wrap').hidden = false;
+        document.getElementById('payment-id').textContent = paymentId;
+      }
       if (q.get('status') !== 'success') {
         document.getElementById('icon').textContent = '!';
         document.getElementById('icon').className = 'modal-icon error';
